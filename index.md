@@ -1,4 +1,4 @@
-# Ratatouille
+# Ratatouille [![Build Status](https://travis-ci.com/munchkinhalfling/ratatouille.svg?branch=master)](https://travis-ci.com/munchkinhalfling/ratatouille)
 ## A library that adds currying and pipes to C.
 
 Ratatouille is a library that adds currying and pipes to C.
