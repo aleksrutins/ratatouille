@@ -1,4 +1,4 @@
-#include "curry.h"
+#include <ratatouille/curry.h>
 #include <stdio.h>
 #include <string.h>
 
