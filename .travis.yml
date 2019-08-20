@@ -1,0 +1,3 @@
+language: c++
+install: sudo make install
+test: make tests && ./curryTest && ./pipeTest
