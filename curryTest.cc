@@ -9,7 +9,7 @@ void printFmt1Arg(const char *fmt, const void *arg) {
     printf(fmt, arg);
 }
 int main() {
-    cout << "---- CURRY TEST ----";
+    cout << "---- CURRY TEST ----" << endl;
     auto add5 = Ratatouille::Curry::curry(&add, 5);
     auto sayHello = Ratatouille::Curry::curry(&printFmt1Arg, "Hello, %s!\n");
     cout << "Result: " << add5(5) << "\n";
