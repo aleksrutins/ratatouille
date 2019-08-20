@@ -23,7 +23,7 @@ This will construct a new instance of the Piper class with an internal value of 
 <code>Piper *pipe(std::function&lt;T(T)&gt; fn)</code>
 This will pipe the internal value through `fn`, which takes in the current value and returns the changed value, and return `this`. (Yay! Pure functions!)<br/>
 <br/>
-<code>ret()</code><br/>
+<code>T ret()</code><br/>
 This returns the internal value and frees the instance. The `Piper` is not usable after this function call.
 
 ### `Ratatouille::Curry`
