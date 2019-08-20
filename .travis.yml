@@ -1,6 +1,7 @@
 language: c
 install: sudo make install
 script: make tests && ./curryTest && ./pipeTest
+compiler: clang
 include:
     # works on Precise and Trusty
     - os: linux
