@@ -3,8 +3,6 @@ install:
 	mkdir /usr/include/ratatouille
 	cp -t /usr/include/ratatouille/ curry.h pipe.h
 
-tests: curryTest pipeTest
-curryTest:
+tests:
 	clang++ -Wall -std=c++11 curryTest.cc -o curryTest
-pipeTest:
 	clang++ -Wall -std=c++11 pipeTest.cc -o pipeTest
