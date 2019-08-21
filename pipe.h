@@ -12,7 +12,7 @@ namespace Ratatouille::Pipe {
             return this;
         }
         Piper *callMemberFn(void (T::*fn)()) {
-            fn(value);
+            value.*fn();
             return this;
         }
         T ret() {
