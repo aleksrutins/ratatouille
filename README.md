@@ -9,7 +9,7 @@ To install Ratatouille (on Linux), run `$ sudo make install`. This will install 
 
 ## Usage
 
-To use Ratatouille in your program, #include `<ratatouille/pipe.h>` and `<ratatouille/curry.h>`. this will include the Ratatouille::Pipe and Ratatouille::Curry namespaces.
+To use Ratatouille in your program, #include `<ratatouille/pipe.h>` and `<ratatouille/curry.h>`. this will include the Ratatouille::Pipe and Ratatouille::Curry namespaces. If you are using clang++ to compile your program, be sure to use the `-std=c++14` option, because otherwise it will error with something like "inferred return types are a feature of C++14".
 
 ## The Library
 
