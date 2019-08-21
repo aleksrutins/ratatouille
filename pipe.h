@@ -11,6 +11,10 @@ namespace Ratatouille::Pipe {
             value = fn(value);
             return this;
         }
+        Piper *callMemberFn(void *(*fn)()) {
+            value.*fn();
+            return this;
+        }
         T ret() {
             T val = value;
             delete this;

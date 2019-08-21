@@ -9,6 +9,6 @@ int main() {
         return str.append(" there");
     })->pipe([](string str){
         return str.append("\n");
-    })->ret();
+    })->callMemberFn(&string::shrink_to_fit)->ret();
     return 0;
 }
