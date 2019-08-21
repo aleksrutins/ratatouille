@@ -11,7 +11,7 @@ namespace Ratatouille::Pipe {
             value = fn(value);
             return this;
         }
-        Piper *callMemberFn(void (T::*fn)()) {
+        Piper *callMemberFn(void (*fn)()) {
             value.*fn();
             return this;
         }
