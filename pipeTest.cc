@@ -2,6 +2,20 @@
 #include <iostream>
 using namespace std;
 
+class PipeableClass {
+    string val;
+    public:
+    PipeableClass() {
+        val = "Hi";
+    }
+    void addWorld() {
+        val += " world";
+    }
+    string get() {
+        return val;
+    }
+};
+
 int main() {
     cout << "---- PIPE TEST  ----" << endl;
     Ratatouille::Pipe::Piper<string> *piper = new Ratatouille::Pipe::Piper<string>("hi");
@@ -9,6 +23,14 @@ int main() {
         return str.append(" there");
     })->pipe([](string str){
         return str.append("\n");
-    })->callMemberFn(&string::shrink_to_fit)->ret();
+    })->ret();
+    Ratatouille::Pipe::Piper<PipeableClass> *otherPiper = new Ratatouille::Pipe::Piper<PipeableClass>(PipeableClass());
+    otherPiper->pipe([](PipeableClass p) {
+        cout << p.get();
+        return p;
+    })->callMemberFn(&PipeableClass::addWorld)->pipe([](PipeableClass p) {
+        cout << p.get();
+        return p;
+    })->ret();
     return 0;
 }
