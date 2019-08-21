@@ -9,7 +9,7 @@ class PipeableClass {
         val = "Hi";
     }
     void addWorld() {
-        cout << "adding world";
+        cout << "adding world" << endl;
         val += " world";
     }
     string get() {
@@ -27,12 +27,12 @@ int main() {
     })->ret();
     Ratatouille::Pipe::Piper<PipeableClass> *otherPiper = new Ratatouille::Pipe::Piper<PipeableClass>(PipeableClass());
     otherPiper->pipe([](PipeableClass p) {
-        cout << "first";
-        cout << p.get();
+        cout << "first" << endl;
+        cout << p.get() << endl;
         return p;
     })->callMemberFn(&PipeableClass::addWorld)->pipe([](PipeableClass p) {
-        cout << "second";
-        cout << p.get();
+        cout << "second" << endl;
+        cout << p.get() << endl;
         return p;
     })->ret();
     return 0;
