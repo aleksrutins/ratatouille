@@ -15,6 +15,7 @@ int main() {
             return "Hello from other thread!";
         }))->pipe([](function<string()> func) {
             cout << func();
+            return func;
         })->ret();
     });
     this_thread::sleep_for(chrono::milliseconds(2500));
