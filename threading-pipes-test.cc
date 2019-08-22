@@ -21,4 +21,5 @@ int main() {
     this_thread::sleep_for(chrono::milliseconds(2500));
     cout << "Hello from main thread";
     thrd.join();
+    return 0;
 }
