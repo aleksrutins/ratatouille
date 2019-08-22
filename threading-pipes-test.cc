@@ -13,7 +13,7 @@ int main() {
         new Piper<function<string()>>([]() {
             this_thread::sleep_for(chrono::seconds(5));
             return "Hello from other thread!";
-        })->pipe([](func) {
+        })->pipe([](function<string()> func) {
             cout << func();
         })->ret();
     });
