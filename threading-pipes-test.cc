@@ -6,18 +6,18 @@
 #include <functional>
 using namespace std;
 using namespace Ratatouille::Pipe;
-
-int main() {
-    cout << "---- Threading & Pipes Test ----";
-    thread thrd([]() {
-        (new Piper<function<string()>>([]() {
+void thrdFunc() {
+    (new Piper<function<string()>>([]() {
             this_thread::sleep_for(chrono::seconds(5));
             return "Hello from other thread!";
         }))->pipe([](function<string()> func) {
             cout << func();
             return func;
         })->ret();
-    });
+}
+int main() {
+    cout << "---- Threading & Pipes Test ----";
+    thread thrd(thrdFunc);
     this_thread::sleep_for(chrono::milliseconds(2500));
     cout << "Hello from main thread";
     thrd.join();
