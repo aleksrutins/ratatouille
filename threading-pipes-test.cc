@@ -10,10 +10,10 @@ using namespace Ratatouille::Pipe;
 int main() {
     cout << "---- Threading & Pipes Test ----";
     thread thrd([]() {
-        new Piper<function<string()>>([]() {
+        (new Piper<function<string()>>([]() {
             this_thread::sleep_for(chrono::seconds(5));
             return "Hello from other thread!";
-        })->pipe([](function<string()> func) {
+        }))->pipe([](function<string()> func) {
             cout << func();
         })->ret();
     });
