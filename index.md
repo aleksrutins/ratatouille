@@ -1,7 +1,7 @@
 # Ratatouille [![Build Status](https://travis-ci.com/munchkinhalfling/ratatouille.svg?branch=master)](https://travis-ci.com/munchkinhalfling/ratatouille)
 ## A library that adds currying and pipes to C.
 
-Ratatouille is a library that adds currying and pipes to C.
+Ratatouille is a library that adds currying (maybe partial application? I always mix them up.) and pipes to C.
 
 ## Installation
 
@@ -17,6 +17,8 @@ To use Ratatouille in your program, #include `<ratatouille/pipe.h>` and `<ratato
 
 ### the `Piper<T>` class
 
+Piper is a class that implements pipes.
+
 `Piper(T val)` (constructor) <br/>
 This will construct a new instance of the Piper class with an internal value of `val`.<br/>
 <br/>
@@ -27,7 +29,7 @@ This will pipe the internal value through `fn`, which takes in the current value
 This returns the internal value and frees the instance. The `Piper` is not usable after this function call.
 
 ### `Ratatouille::Curry`
-
+This is the namespace that adds currying.
 ```c++
 template<class TRet, class TParm1, class TParm2>
 auto curry(TRet (*fn)(TParm1, TParm2), TParm1 firstParam)
